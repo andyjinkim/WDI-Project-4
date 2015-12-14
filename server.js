@@ -35,22 +35,20 @@ app.use(logger('dev'))
 // used for requests that our frontend will make
 app.use(express.static(path.join(__dirname, 'public')))
 
-
-
-
 // Redirects invalid URLS to Index.html
 app.get('/', function (req,res){
   res.sendFile(path.join(__dirname+ '/views/index.html'))
 })
 
-
-
+app.get('/', function(req,res){
+	console.log('getting index?')
+	res.render('index')
+})
 
 app.use('/api', apiRouter)
 
 //Start the Server
 // Server Listen crap
 app.listen(config.port, function(){
-	console.log('it is up and running on port 3000')	
+	console.log('it is up and running on port 3000')
 })
-  

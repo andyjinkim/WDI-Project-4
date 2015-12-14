@@ -1,5 +1,5 @@
 // injecting ngRoute
-angular.module('app.routes', ['ngRoute'])
+angular.module('topoutApp', ['ngRoute'])
 
 	.config(['$routeProvider', '$locationProvider', userRoutes])
 
@@ -8,14 +8,14 @@ angular.module('app.routes', ['ngRoute'])
   $routeProvider
   // route for the home page, which is where you log in
   .when('/login', {
-        templateUrl : 'public/partials/login.html',
+        templateUrl : 'partials/login.html',
           controller  : 'mainController',
             controllerAs: 'login'
       })
 
       // show all users
-      .when('/users', {
-        templateUrl: 'partials/allUsers.html',
+      .when('/home', {
+        templateUrl: 'partials/user-home.html',
         controller: 'userController',
         controllerAs: 'user'
       })
