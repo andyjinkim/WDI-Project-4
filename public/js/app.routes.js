@@ -1,5 +1,5 @@
 // injecting ngRoute
-angular.module('topoutApp', ['ngRoute'])
+angular.module('TopOutApp', ['ngRoute'])
 
 	.config(['$routeProvider', '$locationProvider', userRoutes])
 
@@ -21,6 +21,6 @@ angular.module('topoutApp', ['ngRoute'])
       })
 
       .otherwise({
-        redirectTo: '/login'
+        redirectTo: '/'
       });
 }
