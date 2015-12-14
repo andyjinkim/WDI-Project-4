@@ -1,5 +1,5 @@
 // injecting ngRoute
-angular.module('TopOutApp', ['ngRoute'])
+angular.module('TopOutRoutes', ['ngRoute'])
 
 	.config(['$routeProvider', '$locationProvider', userRoutes])
 
