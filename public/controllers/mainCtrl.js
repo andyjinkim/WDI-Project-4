@@ -2,7 +2,11 @@
 // such as .doLogin, .doLogout
 angular.module('mainCtrl', [])
 
-.controller('mainController', function($rootScope, $location, auth){
+.controller('mainController', mainController)
+
+mainController.$inject =['$rootScope', '$location', 'auth']
+
+function mainController($rootScope, $location, auth){
   var mainCtrl = this
 
   // get info if a person is logged in
@@ -45,4 +49,4 @@ angular.module('mainCtrl', [])
 
     $location.path('/')
   }
-})
+}
