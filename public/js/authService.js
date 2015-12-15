@@ -10,7 +10,7 @@
   // $q is for promises
   function auth( $http, $q, authToken ){
     var authFactory = {}
-    authFactory.login = function(username, password){
+    authFactory.login = function(email, password){
       return $http.post('/api/authenticate', {
         email: email,
         password: password

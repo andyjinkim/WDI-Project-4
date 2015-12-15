@@ -1,4 +1,4 @@
-angular.module('TopOutApp', ['mainCtrl', 'TopOutRouter', 'authService'])
+angular.module('TopOutApp', ['mainCtrl', 'TopOutRouter', 'authService', 'userService'])
 // 	.directive('loginForm', loginForm)
 //
 // function loginForm(){
