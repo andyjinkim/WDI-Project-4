@@ -6,35 +6,30 @@
 <!-- data under login tab -->
 <div class="ui bottom attached tab segment active" data-tab="first">
 	<h1>Login</h1>
-	<form>
+	<form ng-submit="login.doLogin()">
 		<div class="form-group">
-			<label>Email</label>
-			<input placeholder="Email" type="text" class="form-control" >
+			<input placeholder="Email" type="text" class="form-control" ng-model="login.loginData.email">
 		</div>
 		<div class="form-group">
-			<label>Password</label>
-			<input placeholder="Password" type="password" class="form-control" >
+			<input placeholder="Password" type="password" class="form-control" ng-model="login.loginData.password">
 		</div>
 		<button type="submit" class="btn btn-block btn-primary">
-			<span >Login</span>
+			<span>Login</span>
 		</button>
 	</form>
 </div>
 <!-- data under sign up tab -->
 <div class="ui bottom attached tab segment" data-tab="second">
 	<h1>Sign Up!</h1>
-	<form>
+	<form ng-submit="login.saveUser()">
     <div class="form-group">
-      <label>Name</label>
-      <input placeholder="Name" type="text" class="form-control">
+      <input placeholder="Name" type="text" class="form-control" ng-model="login.userData.name">
     </div>
 		<div class="form-group">
-			<label>Email</label>
-			<input placeholder="Email" type="text" class="form-control">
+			<input placeholder="Email" type="text" class="form-control" ng-model="login.userData.email">
 		</div>
 		<div class="form-group">
-			<label>Password</label>
-			<input placeholder="Password" type="password" class="form-control">
+			<input placeholder="Password" type="password" class="form-control" ng-model="login.userData.password">
 		</div>
 		<button type="submit" class="btn btn-block btn-primary">
 			<span>Sign Up</span>

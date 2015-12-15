@@ -1,13 +1,14 @@
 // mainCtrl is for creating methods for logging in
 // such as .doLogin, .doLogout
-angular.module('mainCtrl', [])
+angular.module('mainCtrl', ['userService'])
 
 .controller('mainController', mainController)
 
-mainController.$inject =['$rootScope', '$location', 'auth']
+mainController.$inject =['$rootScope', '$location', 'auth', 'User']
 
-function mainController($rootScope, $location, auth){
+function mainController($rootScope, $location, auth, User){
   var mainCtrl = this
+  mainCtrl.userData = {}
 
   // get info if a person is logged in
   mainCtrl.loggedIn = auth.isLoggedIn()
@@ -42,6 +43,7 @@ function mainController($rootScope, $location, auth){
           }
         })
   }
+
   // function to handle logging out
   mainCtrl.doLogout = function(){
     auth.logout()
@@ -49,4 +51,19 @@ function mainController($rootScope, $location, auth){
 
     $location.path('/')
   }
+
+// function to create a user
+	mainCtrl.saveUser = function() {
+		mainCtrl.processing = true;
+		mainCtrl.message = '';
+
+		// use the create function in the userService
+		User.create(mainCtrl.userData)
+  			.success(function(data) {
+  				mainCtrl.processing = false;
+  				mainCtrl.userData = {};
+  				mainCtrl.message = data.message;
+			});
+
+	};
 }
